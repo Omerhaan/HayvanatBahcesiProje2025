@@ -1,30 +1,22 @@
-# Hayvanat Bahcesi Proje 2025
+# Hayvanat Bahçesi Yönetim Sistemi 🦁
 
-C# Windows Forms ve SQL Server LocalDB kullanilarak gelistirilmis hayvanat bahcesi takip uygulamasidir.
+Bu proje, C# ve Windows Forms kullanılarak geliştirilmiş nesne yönelimli (OOP) bir hayvanat bahçesi yönetim ve takip sistemidir. Sistem, yönetici ve ziyaretçi olmak üzere iki farklı kullanıcı tipi için özelleştirilmiş ekranlar sunar. 
 
-## Ozellikler
+## 🚀 Öne Çıkan Özellikler
 
-- Admin girisi
-- Hayvan bilgilerini listeleme
-- Beslenme ve dolasma saatlerini goruntuleme
-- Saglik durumu guncelleme
-- Ziyaretci ekrani
+* **Rol Bazlı Erişim:** Admin paneli ve Ziyaretçi bilgilendirme ekranı olmak üzere iki farklı arayüz.
+* **Polimorfizm (Çok Biçimlilik):** Ziyaretçi ekranında saat bilgisine göre hayvanların dinamik davranış (Dolaşıyor, Besleniyor, Dinleniyor) göstermesi.
+* **İlişkisel Veritabanı:** MSSQL kullanılarak hayvan türleri, sağlık durumları ve muayene kayıtlarının `JOIN` işlemleriyle entegre biçimde yönetilmesi.
+* **Dinamik UI:** Arayüz elemanlarının kod üzerinden merkezi bir "Temalar" sınıfı ile yönetilmesi.
 
-## Teknolojiler
+## 🛠️ Kullanılan Teknolojiler
 
-- C#
-- Windows Forms
-- SQL Server LocalDB
-- .NET Framework 4.8
+* **Programlama Dili:** C# (.NET Framework 4.8)
+* **Veritabanı:** Microsoft SQL Server (LocalDB)
+* **Veri Erişimi:** ADO.NET (SqlDataAdapter, SqlCommand)
+* **Kavramlar:** Nesne Yönelimli Programlama (Kalıtım, Çok Biçimlilik), İlişkisel Veritabanı Yönetimi
 
-## Calistirma
+## 📌 Modüller
 
-1. `HayvanatBahcesiProje2025.sln` dosyasini Visual Studio ile acin.
-2. Visual Studio Installer uzerinden `.NET Framework 4.8 Developer Pack` ve SQL Server LocalDB bilesenlerinin kurulu oldugundan emin olun.
-3. Projeyi derleyip calistirin.
-
-## Admin Bilgileri
-
-Kullanici adi: `admin`
-
-Sifre: `1234`
+1. **Admin Paneli:** Yöneticilerin hayvanların dolaşma saatlerini, beslenme vakitlerini ve güncel sağlık durumlarını güncelleyebildiği yönetim modülü.
+2. **Ziyaretçi Paneli:** Ziyaretçilerin ad/soyad ve saat bilgisi girerek o an hayvanların hangi aktiviteyi (beslenme/dinlenme/dolaşma) yaptığını anlık olarak listeleyebildiği ekran.
