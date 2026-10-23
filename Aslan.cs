@@ -1,33 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace HayvanatBahcesiProje2025
 {
     public class Aslan : Hayvan
     {
-        public TimeSpan DolasmaBaslangic { get; set; }
-        public TimeSpan DolasmaBitis { get; set; }
-        public TimeSpan YemekSaati { get; set; }
-
-        public Aslan(string ad, TimeSpan dolasmaBas, TimeSpan dolasmaBit, TimeSpan yemekSaati)
-            : base(ad, "Aslan")
+        public Aslan(string ad, TimeSpan dolasmaBas, TimeSpan dolasmaBit, TimeSpan yemekSaati, string saglikDurumu = "Sağlıklı")
+            : base(ad, "Aslan", dolasmaBas, dolasmaBit, yemekSaati, saglikDurumu)
         {
-            DolasmaBaslangic = dolasmaBas;
-            DolasmaBitis = dolasmaBit;
-            YemekSaati = yemekSaati;
         }
 
         public override string DavranisGoster(TimeSpan saat)
         {
+            // Lion feeding window: 45 minutes
+            TimeSpan yemekBitis = YemekSaati.Add(TimeSpan.FromMinutes(45));
+            if (saat >= YemekSaati && saat <= yemekBitis)
+                return "Et ile besleniyor (Kükrüyor)";
+
             if (saat >= DolasmaBaslangic && saat <= DolasmaBitis)
-                return "Dolaşıyor";
-            else if (saat == YemekSaati)
-                return "Besleniyor";
-            else
-                return base.DavranisGoster(saat);
+                return "Bölgesinde devriye geziyor";
+
+            return "Gölgede dinleniyor";
         }
     }
 }

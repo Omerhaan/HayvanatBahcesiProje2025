@@ -17,6 +17,8 @@ namespace HayvanatBahcesiProje2025
         public static void FormuUygula(Form form, string baslik)
         {
             form.Text = baslik;
+            form.FormBorderStyle = FormBorderStyle.FixedSingle;
+            form.MaximizeBox = false;
             form.BackColor = ArkaPlan;
             form.BackgroundImage = null;
             form.BackgroundImageLayout = ImageLayout.None;
